@@ -7,6 +7,11 @@
 <html>
 	<head>
 		<title>Phase Shift by TEMPLATED</title>
+
+		<script src="js/test.js"></script>
+		<link rel="stylesheet" href="css/test.css" />
+
+
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -23,6 +28,7 @@
 			<link rel="stylesheet" href="css/style-wide.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
 	</head>
 	<body>
 
@@ -40,12 +46,28 @@
 						<nav id="nav">
 							<ul>
 								<li class="active"><a href="index.html">會員中心</a></li>
-								<li><a href="left-sidebar.html">登入</a></li>
+
+								<li><input type="button" name="login" onclick="Show();" value="登入"
+									id="login"></li>
+
 								<li><a href="right-sidebar.html">登出</a></li>
 								<li><a href="no-sidebar.html">投稿</a></li>
 							</ul>
 						</nav>
 					</div>
+
+
+					<div id="shade" class="c1 hide"></div>
+					<div id="modal" class="c2 hide">
+					    <p>帳號：<input id="account" type="text" placeholder="account"></p>
+					    <p>密碼：<input id="password" type="password" placeholder="password"></p>
+					
+					    <input type="button" value="登入" class ="loginbutton" style="right: 180px" onclick="Login();">
+					    <input type="button" value="取消" onclick="Hide();" class="loginbutton">
+					
+					    </div>
+
+
 
 			<div class="wrapper style1">
 				<!-- Banner -->
@@ -101,6 +123,7 @@
 									<div class="box">
 										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
 										<a href="#" class="button">Read More</a> </div>
+
 								</section>
 							</div>
 						</div>

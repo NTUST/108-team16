@@ -139,14 +139,15 @@
 		appearance: none;
 		background: white;
 		color: #555555;
-		border: none;
+
+		
 		display: block;
 		outline: 0;
-		padding: 1em 1em;
+		padding: 5px 5px;
 		text-decoration: none;
-		width: 100%;
+		width: 80%;
 		border-radius: 6px;
-	}
+	} 
 
 		input[type="text"]:focus,
 		input[type="password"]:focus,
@@ -214,7 +215,9 @@
 
 			.image.feature img {
 				display: block;
-				width: 100%;
+
+				width: 80%;
+
 			}
 
 		.image.featured {
