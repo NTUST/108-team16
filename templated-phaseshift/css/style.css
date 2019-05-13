@@ -139,14 +139,14 @@
 		appearance: none;
 		background: white;
 		color: #555555;
-		border: none;
+		
 		display: block;
 		outline: 0;
-		padding: 1em 1em;
+		padding: 5px 5px;
 		text-decoration: none;
-		width: 100%;
+		width: 80%;
 		border-radius: 6px;
-	}
+	} 
 
 		input[type="text"]:focus,
 		input[type="password"]:focus,
@@ -214,7 +214,7 @@
 
 			.image.feature img {
 				display: block;
-				width: 100%;
+				width: 80%;
 			}
 
 		.image.featured {
@@ -309,9 +309,10 @@
 					height: 2em;
 					line-height: 2em;
 					font-size: 1em;
-					color: #828282;
+					color: white;
 					border-radius: 100%;
 					text-align: center;
+					background-color: black;
 				}
 
 	ul.actions {
@@ -360,7 +361,7 @@
 			top: 1em;
 			display: block;
 			background: none;
-			color: #FFF;
+			color: #3973ac;
 			width: 56px;
 			height: 56px;
 			text-align: center;
@@ -373,7 +374,7 @@
 			text-transform: uppercase;
 			font-weight: 800;
 			font-size: 2em;
-			color: #FFF;
+			color: #66b3ff;
 		}
 
 		ul.style span {
@@ -426,7 +427,7 @@
 		-o-transition: background-color 0.35s ease-in-out;
 		-ms-transition: background-color 0.35s ease-in-out;
 		transition: background-color 0.35s ease-in-out;
-		background: #d84780;
+		background: coral;
 		border-radius: 6px;
 		border: 0;
 		color: white;
@@ -446,7 +447,7 @@
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			background: #e1719d;
+			background: lightsalmon;
 		}
 
 		input[type="submit"].alt,
@@ -506,20 +507,31 @@
 		width: 100%;
 		background: #3cb371;
 		color: #fff;
-		padding: 1.25em 1.25em 1.25em 1.25em;
+		padding: 1em 1.25em 1.25em 1.25em;
 		z-index: 100;
 	}
 
 /* Logo */
 
 	#logo {
+		position: relative;
+		top:5px;
 		font-size: 2em;
 		cursor: default;
+		width: 20%;
+		display:inline-block;
 	}
 
 	#logo h1 {
 		display: inline-block;
-		text-transform: uppercase;
+		text-transform: uppercase;	
+	}
+
+	#search{
+		width:40%;
+		padding: 10px 2px;
+		margin: 0px;
+		border-radius: 5px;
 	}
 
 /* Navigation */
@@ -527,7 +539,7 @@
 	#nav {
 		position: absolute;
 		right: 0;
-		top: 0;
+		top: 10px;
 		cursor: default;
 	}
 
@@ -546,6 +558,7 @@
 		color: #ddd;
 		color: rgba(255, 255, 255, 0.75);
 		text-decoration: none;
+		font-size: 1.5em;
 	}
 
 	#nav ul li a:hover {
@@ -607,23 +620,29 @@
 
 	#copyright {
 		color: #ddd;
-		color: rgba(255, 255, 255, 0.2) !important;
+		color: black !important;
 		text-align: center;
 		display: block;
 		padding: 3em 0em;
+		background-color: #FF7744;
 	}
 
 		#copyright a {
 			text-decoration: none;
 			color: #ddd;
-			color: rgba(255, 255, 255, 0.4) !important;
+			color: black !important;
 		}
 
 /* Box */
 
 	.box {
-		padding: 3em 2em;
+		padding: 3em 0em;
 		background: #FFF;
 		text-align: center;
 		border-radius: 0px 0px 6px 6px;
+	}
+
+	.box p {
+		font-size: 24px;
+		padding-top: 1.25em;
 	}

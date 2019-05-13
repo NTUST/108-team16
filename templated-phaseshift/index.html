@@ -7,6 +7,10 @@
 <html>
 	<head>
 		<title>Phase Shift by TEMPLATED</title>
+		<script src="js/test.js"></script>
+		<link rel="stylesheet" href="css/test.css" />
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -22,28 +26,45 @@
 			<link rel="stylesheet" href="css/style-wide.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+
 	</head>
 	<body>
 
 		<!-- Wrapper -->
-			<div class="wrapper style1">
+			
 
 				<!-- Header -->
-					<div id="header" class="skel-panels-fixed">
+					<div id="header" class="skel-panels-fixed" >
 						<div id="logo">
 							<h1><a href="index.html">甜點的心</a></h1>
-							<span class="tag">by 16組</span>
+							<span class="tag">by 16組</span>	
 						</div>
+						<input id="search" type="search" name="search" placeholder="搜尋" >
+						<button class="button fa fa-search" type="search" name="search" ></button>
 						<nav id="nav">
 							<ul>
 								<li class="active"><a href="index.html">會員中心</a></li>
-								<li><a href="left-sidebar.html">登入</a></li>
+								<li><input type="button" name="login" onclick="Show();" value="登入"
+									id="login"></li>
 								<li><a href="right-sidebar.html">登出</a></li>
 								<li><a href="no-sidebar.html">投稿</a></li>
 							</ul>
 						</nav>
 					</div>
 
+					<div id="shade" class="c1 hide"></div>
+					<div id="modal" class="c2 hide">
+					    <p>帳號：<input id="account" type="text" placeholder="account"></p>
+					    <p>密碼：<input id="password" type="password" placeholder="password"></p>
+					
+					    <input type="button" value="登入" class ="loginbutton" style="right: 180px" onclick="Login();">
+					    <input type="button" value="取消" onclick="Hide();" class="loginbutton">
+					
+					    </div>
+
+
+			<div class="wrapper style1">
 				<!-- Banner -->
 			<!--		<div id="banner" class="container">
 						<section>
@@ -56,26 +77,36 @@
 					<div id="extra">
 						<div class="container">
 							<div class="row no-collapse-1">
-								<section class="4u"> <a href="#" class="image featured"><img src="images/pic01.jpg" alt=""></a>
+								<section class="4u"> <a href="#" class="image featured"><img src="images/1.jpg" alt=""></a>
 									<div class="box">
-										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
+										<p>apple pie</p>
 										<a href="#" class="button">Read More</a> </div>
 								</section>
-								<section class="4u"> <a href="#" class="image featured"><img src="images/pic02.jpg" alt=""></a>
+								<section class="4u"> <a href="#" class="image featured"><img src="images/2.jpg" alt=""></a>
 									<div class="box">
-										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
+										<p>snow Q cookie</p>
 										<a href="#" class="button">Read More</a> </div>
 								</section>
-								<section class="4u"> <a href="#" class="image featured"><img src="images/pic03.jpg" alt=""></a>
+								<section class="4u"> <a href="#" class="image featured"><img src="images/3.jpg" alt=""></a>
 									<div class="box">
-										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
+										<p>chocolate cake</p>
 										<a href="#" class="button">Read More</a> </div>
 								</section>
 							</div>
 							<div class="row no-collapse-1">
-								<section class="4u"> <a href="#" class="image featured"><img src="images/pic01.jpg" alt=""></a>
+								<section class="4u"> <a href="#" class="image featured"><img src="images/4.jpg" alt=""></a>
 									<div class="box">
-										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
+										<p>strawberry cheese cake</p>
+										<a href="#" class="button">Read More</a> </div>
+								</section>
+								<section class="4u"> <a href="#" class="image featured"><img src="images/5.jpg" alt=""></a>
+									<div class="box">
+										<p>tiramisu</p>
+										<a href="#" class="button">Read More</a> </div>
+								</section>
+								<section class="4u"> <a href="#" class="image featured"><img src="images/6.jpg" alt=""></a>
+									<div class="box">
+										<p>coffee cake</p>
 										<a href="#" class="button">Read More</a> </div>
 								</section>
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic02.jpg" alt=""></a>
@@ -87,16 +118,7 @@
 									<div class="box">
 										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
 										<a href="#" class="button">Read More</a> </div>
-								</section>
-								<section class="4u"> <a href="#" class="image featured"><img src="images/pic02.jpg" alt=""></a>
-									<div class="box">
-										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">Read More</a> </div>
-								</section>
-								<section class="4u"> <a href="#" class="image featured"><img src="images/pic03.jpg" alt=""></a>
-									<div class="box">
-										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
-										<a href="#" class="button">Read More</a> </div>
+
 								</section>
 							</div>
 						</div>
@@ -111,10 +133,10 @@
 								<div class="6u">
 									<section>
 										<ul class="style">
-											<li class="fa fa-wrench">
+											<li class="fas fa-cookie" style :before="color:black;">
 												<h3>石喻仁</h3>
 												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
-											<li class="fa fa-leaf">
+											<li class="fas fa-ice-cream">
 												<h3>邱捷儀</h3>
 												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
 										</ul>
@@ -123,10 +145,10 @@
 								<div class="6u">
 									<section>
 										<ul class="style">
-											<li class="fa fa-cogs">
+											<li class="fas fa-egg">
 												<h3>吳芷昀</h3>
 												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
-											<li class="fa fa-road">
+											<li class="fas fa-cheese">
 												<h3>陳韻如</h3>
 												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
 										</ul>
@@ -139,7 +161,7 @@
 	</div>
 
 	<!-- Footer -->
-		<div id="footer" class="wrapper style2">
+		<!--<div id="footer" class="wrapper style2">
 			<div class="container">
 				<section>
 					<header class="major">
@@ -174,7 +196,7 @@
 					</form>
 				</section>
 			</div>
-		</div>
+		</div>-->
 
 	<!-- Copyright -->
 		<div id="copyright">
@@ -189,6 +211,5 @@
 				</div>
 			</div>
 		</div>
-
 	</body>
 </html>
