@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>login</title>
+<link rel="stylesheet" href="/resources/demos/style.css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+onclick="window.open('test.html','login',config='toolbar=no,location=no,resizable=no,menubar=no,status=no,height=300 pixels, width= 350 pixels, scrollbars=no,left = 450 pixels,top=200 pixels');"
+<script>
+	$(function() {
+	$( "#login" ).dialog({
+	modal: true,
+	buttons: {
+		cancel: function() {
+		$( this ).dialog( "close" );
+			window.close();
+				}
+			}
+	});
+	});
+	</script>
+</head>
+<body>
+
+
+<div id="login" title="login window">
+User name:
+<input type="text" name="username">
+User password:
+<input type="password" name="password">
+</div>
+</body>
+</html>
