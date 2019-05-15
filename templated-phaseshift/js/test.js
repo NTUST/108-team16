@@ -12,6 +12,7 @@
     function Login(){
     	var useraccount = document.getElementById('account');
     	var userpassword = document.getElementById('password');
+        useraccount.focus();
     	var acc = useraccount.value;
     	var psw = userpassword.value;
     	if (acc == "123" && psw == "123") {
