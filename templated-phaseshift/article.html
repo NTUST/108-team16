@@ -2,9 +2,6 @@
 <html>
 <head>
 	<title></title>
-	<script src="js/test.js"></script>
-		<link rel="stylesheet" href="css/test.css" />
-
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="" />
@@ -63,38 +60,23 @@
 	</style>
 </head>
 <body>
-				<!-- Header -->
-					<div id="header" class="skel-panels-fixed" >
-						<div id="logo">
-							<h1><a href="index.html">甜點的心</a></h1>
-							<span class="tag">by 16組</span>	
-						</div>
-						<input id="search" type="search" name="search" placeholder="搜尋" >
-						<button class="button fa fa-search" type="search" name="search" ></button>
-						<nav id="nav">
-							<ul>
-								<li class="active"><a href="member center.html">會員中心</a></li>
-
-								<li><input type="button" name="login" onclick="Show();" value="登入"
-									id="login"></li>
-
-								<li><input type="button" name="login" onclick="" value="登出"
-									id="login"></a></li>
-								<li><a href="article.html">投稿</a></li>
-							</ul>
-						</nav>
-					</div>
-
-
-					<div id="shade" class="c1 hide"></div>
-					<div id="modal" class="c2 hide">
-					    <p>帳號：<input id="account" type="text" placeholder="account"></p>
-					    <p>密碼：<input id="password" type="password" placeholder="password"></p>
-					
-					    <input type="button" value="登入" class ="loginbutton" style="right: 180px" onclick="Login();">
-					    <input type="button" value="取消" onclick="Hide();" class="loginbutton">
-					
-					    </div>
+	<!--header-->
+	<div id="header" class="skel-panels-fixed">
+		<div id="logo">
+			<h1><a href="index.html">甜點的心</a></h1>
+			<span class="tag">by 16組</span>	
+		</div>
+		<input type="search" name="search" placeholder="搜尋" style="width:30%;padding: 10px 2px;margin: 0px;border-radius: 5px;">
+		<button class="button fa fa-search" type="search" name="search" style="margin:0px"></button>
+		<nav id="nav">
+			<ul>
+				<li class="active"><a href="index.html">會員中心</a></li>
+				<li><a href="left-sidebar.html">登入</a></li>
+				<li><a href="right-sidebar.html">登出</a></li>
+				<li><a href="no-sidebar.html">投稿</a></li>
+			</ul>
+		</nav>
+	</div>
 
 
 
@@ -114,7 +96,7 @@
 			</div>
 			<textarea class="textarea" name="saySomething" rows="2" placeholder="Somethings you want to say in advance" style="
 				width: 66.67%;
-				margin-left: 10em;
+				margin-left: 16.6%;
 				font-size: 1.5em;
 				text-align: center;"></textarea>
 			<div class="line">
@@ -143,7 +125,7 @@
 			</div>
 			<div class="line">
 				<h3>___________________材料 :
-					<textarea class="textarea" name="material" rows="2" style="width: 66.67%;margin-left: 12em;font-size: 1em;" ></textarea>
+					<textarea class="textarea" name="material" rows="2" style="width: 66.67%;margin-left: 16.6%;font-size: 1em;" ></textarea>
 				</h3>
 			<div class="line">
 				<h3>___________________步驟 :</h3>
@@ -173,7 +155,7 @@
 				<input type="button" value="新增步驟" onclick="step4_create()">
 				<input type="button" value="取消步驟" onclick="step3_delete()">
 				<span>上傳圖片 →</span>
-				<input id="file3" type="file" name="image_3" placeholder="上傳圖片" style="margin:2em 0em 2em 0em;">			
+				<input id="file3" type="file" name="image_3" style="margin:2em 0em 2em 0em;">			
 			</div>
 	<!--4-->
 			<div class="steps" name="step_4" id="s4" style="display: none">
