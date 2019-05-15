@@ -7,6 +7,9 @@
 <html>
 	<head>
 		<title>Left Sidebar - Phase Shift by TEMPLATED</title>
+		<script src="js/test.js"></script>
+		<link rel="stylesheet" href="css/test.css" />
+
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -29,21 +32,37 @@
 			<div class="wrapper style1">
 
 				<!-- Header -->
-					<div id="header" class="skel-panels-fixed">
+					<div id="header" class="skel-panels-fixed" >
 						<div id="logo">
 							<h1><a href="index.html">甜點的心</a></h1>
-							<span class="tag">by TEMPLATED</span>
+							<span class="tag">by 16組</span>	
 						</div>
+						<input id="search" type="search" name="search" placeholder="搜尋" >
+						<button class="button fa fa-search" type="search" name="search" ></button>
 						<nav id="nav">
 							<ul>
-								<li class="active"><a href="index.html">Homepage</a></li>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
+								<li class="active"><a href="member center.html">會員中心</a></li>
+
+								<li><input type="button" name="login" onclick="Show();" value="登入"
+									id="login"></li>
+
+								<li><input type="button" name="login" onclick="" value="登出"
+									id="login"></a></li>
+								<li><a href="article.html">投稿</a></li>
 							</ul>
 						</nav>
 					</div>
-				<!-- Header -->
+
+
+					<div id="shade" class="c1 hide"></div>
+					<div id="modal" class="c2 hide">
+					    <p>帳號：<input id="account" type="text" placeholder="account"></p>
+					    <p>密碼：<input id="password" type="password" placeholder="password"></p>
+					
+					    <input type="button" value="登入" class ="loginbutton" style="right: 180px" onclick="Login();">
+					    <input type="button" value="取消" onclick="Hide();" class="loginbutton">
+					
+					    </div>
 
 				<!-- Page -->
 					<div id="page" class="container">
