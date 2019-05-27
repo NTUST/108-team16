@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="js/test.js"></script>
+
+	<link rel="stylesheet" href="css/test.css" />
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.dropotron.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-wide.css" />
+	</noscript>
+	<style>
+	*{
+		box-sizing: border-box;
+	}
+	.recipeData{
+		width:66.67%;
+		background-color: skyblue;
+	}
+	.steps{
+		width: 66.67%;
+		background-color: transparent;
+		margin: auto;
+
+	}
+	.buttonNav{
+		position: absolute;
+		display: inline-block;
+		width: 10%;
+		
+	}
+	.textarea{;
+		width: 100%;
+		margin-top: 0px;
+		font-size: 1.5em;
+		background-color: skyblue;
+	}
+	.Information{
+		margin: auto;
+		width: 75%;
+		background-color: white;
+	}
+	.line{
+		padding: 1em 0em;
+	}
+	.exampleImage{
+		display: block;
+		max-height: 486px; 
+		margin: auto;
+		margin:1em auto;
+	}
+	</style>
+</head>
+<body>
+
+
+	<!-- Header -->
+					<div id="header" class="skel-panels-fixed" >
+						<div id="logo">
+							<h1><a href="index.html">甜點的心</a></h1>
+							<span class="tag">by 16組</span>	
+						</div>
+						<input id="search" type="search" name="search" placeholder="搜尋" >
+						<button class="button fa fa-search" type="search" name="search" ></button>
+						<nav id="nav">
+							<ul>
+								<li class="active"><a href="member center.html">會員中心</a></li>
+
+								<li><a href="login.html">登入</a></li>
+
+								<li><a href="login.html">登出</a></li>
+								<li><a href="article.html">投稿</a></li>
+							</ul>
+						</nav>
+					</div>
+
+<!--wrapperstyle1-->
+	<div class="wrapper style1">
+		<div class="Information">
+			<div class="line">
+				<h3><!--%12-->_______________食譜標題 :
+				<input class="recipeData" type="text" name="recipeTitle" style="
+					font-size: 1em;
+					font-weight: 300;
+					border: 1px solid black;
+					width: 66.67%;
+					display: inline-block;
+					padding: 0.5em 1em;">
+				</h3>
+			</div>
+			<textarea class="textarea" name="saySomething" rows="2" placeholder="Somethings you want to say in advance" style="
+				width: 66.67%;
+				margin-left: 16.6%;
+				font-size: 1.5em;
+				text-align: center;"></textarea>
+			<div class="line">
+				<h3><!--%12-->_____________輸入影片ID :
+				<input class="recipeData" type="text" name="videoID" placeholder="Youtube影片ID" 
+				style="
+					font-size: 1em;
+					font-weight: 300;
+					border: 1px solid black;
+					width: 66.67%;
+					display: inline-block;
+					padding: 0.5em 1em;">
+				</h3>
+			</div>
+			<iframe width="864" height="486" src="https://youtube.com/embed/-RnUba-UK-Y" style="display: block;margin:auto;"></iframe>
+			<div class="line">
+				<h3><!--%12-->_______________食譜名稱 :
+				<input class="recipeData" type="text" name="recipeName" style="
+					font-size: 1em;
+					font-weight: 300;
+					border: 1px solid black;
+					width: 66.67%;
+					display: inline-block;
+					padding: 0.5em 1em;">
+				</h3>
+			</div>
+			<div class="line">
+				<h3>___________________材料 :
+					<textarea class="textarea" name="material" rows="2" style="width: 66.67%;margin-left: 16.6%;font-size: 1em;" ></textarea>
+				</h3>
+			<div class="line">
+				<h3>___________________步驟 :</h3>
+			</div>
+		<!--steps--><!--1-->
+			<div class="steps" name="step_1" id="s1">
+				<textarea class="textarea" name="step1" rows="2" style="min-height: 48px;" placeholder="1"></textarea>
+				<img class="exampleImage" id="img1" src="">
+				<input type="button" value="新增步驟" onclick="step2_create()">
+				<input type="button" value="取消步驟" onclick="" style="visibility: hidden;">
+				<span>上傳圖片 →</span>
+				<input id="file1" type="file" name="image_1" placeholder="上傳圖片" style="margin:2em 0em 2em 0em;">			
+			</div>
+	<!--2-->
+			<div class="steps" name="step_2" id="s2" style="display: none">
+				<textarea class="textarea" name="step2" rows="2" style="min-height: 48px;" placeholder="2"></textarea>
+				<img class="exampleImage" id="img2" src="">
+				<input type="button" value="新增步驟" onclick="step3_create()">
+				<input type="button" value="取消步驟" onclick="step2_delete()">
+				<span>上傳圖片 →</span>
+				<input id="file2" type="file" name="image_2" placeholder="上傳圖片" style="margin:2em 0em 2em 0em;">			
+			</div>
+	<!--3-->
+			<div class="steps" name="step_3" id="s3" style="display: none">
+				<textarea class="textarea" name="step3" rows="2" style="min-height: 48px;" placeholder="3"></textarea>
+				<img class="exampleImage" id="img3" src="">
+				<input type="button" value="新增步驟" onclick="step4_create()">
+				<input type="button" value="取消步驟" onclick="step3_delete()">
+				<span>上傳圖片 →</span>
+				<input id="file3" type="file" name="image_3" style="margin:2em 0em 2em 0em;">			
+			</div>
+	<!--4-->
+			<div class="steps" name="step_4" id="s4" style="display: none">
+				<textarea class="textarea" name="step4" rows="2" style="min-height: 48px;" placeholder="4"></textarea>
+				<img class="exampleImage" id="img4" src="">
+				<input type="button" value="新增步驟" onclick="step5_create()">
+				<input type="button" value="取消步驟" onclick="step4_delete()">
+				<span>上傳圖片 →</span>
+				<input id="file4" type="file" name="image_4" placeholder="上傳圖片" style="margin:2em 0em 2em 0em;">			
+			</div>
+	<!--5-->
+			<div class="steps" name="step_5" id="s5" style="display: none">
+				<textarea class="textarea" name="step5" rows="2" style="min-height: 48px;" placeholder="5"></textarea>
+				<img class="exampleImage" id="img5" src="">
+				<input type="button" value="新增步驟" onclick="step6_create()">
+				<input type="button" value="取消步驟" onclick="step5_delete()">
+				<span>上傳圖片 →</span>
+				<input id="file5" type="file" name="image_5" placeholder="上傳圖片" style="margin:2em 0em 2em 0em;">			
+			</div>
+	<!--6-->
+			<div class="steps" name="step_6" id="s6" style="display: none">
+				<textarea class="textarea" name="step6" rows="2" style="min-height: 48px;" placeholder="6"></textarea>
+				<img class="exampleImage" id="img6" src="">
+				<input type="button" value="新增步驟" onclick="step7_create()">
+				<input type="button" value="取消步驟" onclick="step6_delete()">
+				<span>上傳圖片 →</span>
+				<input id="file6" type="file" name="image_6" placeholder="上傳圖片" style="margin:2em 0em 2em 0em;">
+				
+			</div>
+			<input type="submit" style="display: block;margin: auto; margin-top: 3em;margin-bottom: 0">			
+		</div>
+	</div>
+<!---->
+		<div id="main">
+						<div class="container">
+							<div class="row">
+								
+								<!-- Content -->
+								<div class="6u">
+									<section>
+										<ul class="style">
+											<li class="fas fa-cookie" style :before="color:black;">
+												<h3>石喻仁</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+											<li class="fas fa-ice-cream">
+												<h3>邱捷儀</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+										</ul>
+									</section>
+								</div>
+								<div class="6u">
+									<section>
+										<ul class="style">
+											<li class="fas fa-egg">
+												<h3>吳芷昀</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+											<li class="fas fa-cheese">
+												<h3>陳韻如</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+										</ul>
+									</section>
+								</div>  
+							</div>
+						</div>
+					</div>
+	
+		<div id="copyright">
+			<div class="container">
+				<div class="copyright">
+					<p>Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
+					<ul class="icons">
+						<li><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
+						<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+						<li><a href="#" class="fa fa-google-plus"><span>Google+</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script>
+			function step2_create() {
+				document.getElementById("s2").style.display= "block";
+			}
+			function step3_create() {
+				document.getElementById("s3").style.display= "block";
+			}
+			function step4_create() {
+				document.getElementById("s4").style.display= "block";
+			}
+			function step5_create() {
+				document.getElementById("s5").style.display= "block";
+			}
+			function step6_create() {
+				document.getElementById("s6").style.display= "block";
+			}
+			function step7_create() {
+				document.getElementById("s7").style.display= "block";
+			}
+			function step2_delete(){
+				document.getElementById('s2').style.display= "none";
+			}
+			function step3_delete(){
+				document.getElementById('s3').style.display= "none";
+			}
+			function step4_delete(){
+				document.getElementById('s4').style.display= "none";
+			}
+			function step5_delete(){
+				document.getElementById('s5').style.display= "none";
+			}
+			function step6_delete(){
+				document.getElementById('s6').style.display= "none";
+			}
+			$("#file1").change(function(){
+	        var objUrl = getObjectURL(this.files[0]) ;
+	        console.log("objUrl = "+objUrl) ;
+		        if (objUrl) {
+		            $("#img1").attr("src", objUrl) ;
+		        }
+	    	}) ;
+	    	$("#file2").change(function(){
+	        var objUrl = getObjectURL(this.files[0]) ;
+	        console.log("objUrl = "+objUrl) ;
+		        if (objUrl) {
+		            $("#img2").attr("src", objUrl) ;
+		        }
+	    	}) ;$("#file3").change(function(){
+	        var objUrl = getObjectURL(this.files[0]) ;
+	        console.log("objUrl = "+objUrl) ;
+		        if (objUrl) {
+		            $("#img3").attr("src", objUrl) ;
+		        }
+	    	}) ;$("#file4").change(function(){
+	        var objUrl = getObjectURL(this.files[0]) ;
+	        console.log("objUrl = "+objUrl) ;
+		        if (objUrl) {
+		            $("#img4").attr("src", objUrl) ;
+		        }
+	    	}) ;$("#file5").change(function(){
+	        var objUrl = getObjectURL(this.files[0]) ;
+	        console.log("objUrl = "+objUrl) ;
+		        if (objUrl) {
+		            $("#img5").attr("src", objUrl) ;
+		        }
+	    	}) ;$("#file6").change(function(){
+	        var objUrl = getObjectURL(this.files[0]) ;
+	        console.log("objUrl = "+objUrl) ;
+		        if (objUrl) {
+		            $("#img6").attr("src", objUrl) ;
+		        }
+	    	}) ;
+	    	function getObjectURL(file) {
+		        var url = null ; 
+		        if (window.createObjectURL!=undefined) { // basic
+		            url = window.createObjectURL(file) ;
+		        } else if (window.URL!=undefined) { // mozilla(firefox)
+		            url = window.URL.createObjectURL(file) ;
+		        } else if (window.webkitURL!=undefined) { // webkit or chrome
+		            url = window.webkitURL.createObjectURL(file) ;
+		        }
+		        return url ;
+		        console.log( url )
+		    }
+		</script>
+</body>
+</html>
