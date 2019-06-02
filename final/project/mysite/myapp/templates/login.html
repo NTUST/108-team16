@@ -28,11 +28,24 @@
 			<link rel="stylesheet" href="{% static '/css/skel.css' %}" />
 			<link rel="stylesheet" href="{% static '/css/style.css' %}" />
 			<link rel="stylesheet" href="{% static '/css/style-wide.css' %}" />
+		 <script type='text/javascript'>
+			$(window).load(function (){
+			var url = location.href;
+			if(url.indexOf('?')!=-1){
+			var ary = url.split('?')[1];
+			var message = ary.split('=')[1];
+			if(ary.split('=')[0] == 'message'){
+				alert(message);
+			}
+			
+			}});
+			</script>
+		 
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 
 	</head>
 	<body>
-
+				
 				<!-- Header -->
 					<div id="header" class="skel-panels-fixed" >
 						<div id="logo">
@@ -42,14 +55,25 @@
 						<input id="search" type="search" name="search" placeholder="搜尋" >
 						<button class="button fa fa-search" type="search" name="search" ></button>
 						<nav id="nav">
+
+							{% if request.user.is_authenticated %}
 							<ul>
+								
+
+								<li><h3>{{request.user}}，歡迎</h3></li>
 								<li class="active"><a href="/memberCenter">會員中心</a></li>
-
-								<li><a href="/login">登入</a></li>
-
-								<li><a href="/login">登出</a></li>
+								<li><a href="/accounts/logout">登出</a></li>
 								<li><a href="/article">投稿</a></li>
 							</ul>
+							{% else %}
+							<ul>
+								<li class="active"><a href="/memberCenter">會員中心</a></li>
+								<li><a href="/accounts/login">登入</a></li>
+								<li><a href="/accounts/regist">註冊</a></li>
+								<li><a href="/article">投稿</a></li>
+							</ul>
+							{% endif %}
+
 						</nav>
 					</div>
 
@@ -62,6 +86,7 @@
 				<!-- Page -->
 					<div id="page" class="container" style="width: 40%">
 						<form method="post" >
+							{% csrf_token %}
 						<label for="account">帳戶:</label>
 						<input id="acc" type="text" placeholder="account" name='acc'>
 						<label for="password">密碼:</label>

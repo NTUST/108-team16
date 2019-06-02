@@ -3,11 +3,11 @@ from . import views
 
 app_name = 'myapp'
 urlpatterns = [
-    path('regist/', views.regist, name='regist'),
-    path('logout/',views.logout, name='logout'),
+    path('accounts/regist/', views.regist, name='regist'),
+    path('accounts/logout/',views.logout, name='logout'),
     path('index/',views.index,name='index'),
     path('memberCenter/', views.member, name='member center'),
-    path('login/', views.login , name="login"),
+    path('accounts/login/', views.login , name="login"),
     path('article/', views.article , name="article"),
     path('apple_pie/', views.applePie, name="applePie"),
     path('chocolate_cake/', views.chocolateCake,name='chocolateCake'),

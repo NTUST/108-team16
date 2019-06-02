@@ -42,14 +42,25 @@
 						<input id="search" type="search" name="search" placeholder="搜尋" >
 						<button class="button fa fa-search" type="search" name="search" ></button>
 						<nav id="nav">
+
+							{% if request.user.is_authenticated %}
 							<ul>
+								
+
+								<li><h3>{{request.user}}，歡迎</h3></li>
 								<li class="active"><a href="/memberCenter">會員中心</a></li>
-
-								<li><a href="/login">登入</a></li>
-
-								<li><a href="/login">登出</a></li>
+								<li><a href="/accounts/logout">登出</a></li>
 								<li><a href="/article">投稿</a></li>
 							</ul>
+							{% else %}
+							<ul>
+								<li class="active"><a href="/memberCenter">會員中心</a></li>
+								<li><a href="/accounts/login">登入</a></li>
+								<li><a href="/accounts/regist">註冊</a></li>
+								<li><a href="/article">投稿</a></li>
+							</ul>
+							{% endif %}
+
 						</nav>
 					</div>
 		<!-- Wrapper -->
@@ -83,7 +94,7 @@
 									</p>
 								</div>
 								<div class="6u">
-									<img src="images/01.jpg" alt="" width="400" height="300">
+									<img src="{%static 'images/1.jpg'%}" alt="" width="400" height="300">
 								</div>
 							</div>
 							<h2>步驟:</h2>
