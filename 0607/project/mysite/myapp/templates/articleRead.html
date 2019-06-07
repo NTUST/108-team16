@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Phase Shift by TEMPLATED</title>
+		{% load staticfiles %}
+		<script src="{% static '/js/test.js' %}"></script>
+		<link rel="stylesheet" href="{% static '/css/test.css' %}" />
+		
+		<!-- <noscript> -->
+			
+		<!-- </noscript> -->
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="{% static '/js/jquery.min.js' %}"></script>
+		<script src="{% static '/js/jquery.dropotron.min.js' %}"></script>
+		<script src="{% static '/js/skel.min.js' %}"></script>
+		<script src="{% static '/js/skel-layers.min.js' %}"></script>
+		<script src="{% static '/js/init.js' %}"></script>
+			<link rel="stylesheet" href="{% static '/css/skel.css' %}" />
+			<link rel="stylesheet" href="{% static '/css/style.css' %}" />
+			<link rel="stylesheet" href="{% static '/css/style-wide.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+	</head>
+<body>
+<!-- Header -->
+					<div id="header" class="skel-panels-fixed" >
+						<div id="logo">
+							<h1><a href="/index">甜點的心</a></h1>
+							<span class="tag">by 16組</span>	
+						</div>
+						<input id="search" type="search" name="search" placeholder="搜尋" >
+						<button class="button fa fa-search" type="search" name="search" ></button>
+						<nav id="nav">
+							<ul>
+								<li class="active"><a href="/memberCenter">會員中心</a></li>
+
+								<li><a href="/login">登入</a></li>
+
+								<li><a href="/login">登出</a></li>
+								<li><a href="/article">投稿</a></li>
+							</ul>
+						</nav>
+					</div>
+					<!-- Wrapper -->
+			<div class="wrapper style1">
+
+				<!-- Page -->
+					<div id="page" class="container">
+						<section>
+							<div class="row">
+								<div class="6u">
+									<header class="major">
+										<h2>{{article.title}}</h2>
+										<span class="byline">{{article.content|linebreaks}}</span>
+									</header>
+									
+									
+									<iframe width="764" height="430" src="https://youtube.com/embed/{{article.videoID}}"></iframe>
+									<hr>
+									<h2>食材:</h2>
+									<pre>
+										{{article.material|linebreaks}}
+									</pre>
+								</div>
+								<div class="6u">
+									<img src="images/01.jpg" alt="" width="400" height="300">
+								</div>
+							</div>
+							<h2>步驟:</h2>
+							<pre>
+								{{article.step1|linebreaks}}
+							</pre>
+						</section>
+					</div>
+					<form method="post" action="{% url 'article:articleDelete' article.title %}">
+						{% csrf_token %}
+						<input type="submit" value="刪除文章" style="position: fixed; left:0;">
+					</form>
+				<!-- /Page -->
+
+</body>
+</html>
