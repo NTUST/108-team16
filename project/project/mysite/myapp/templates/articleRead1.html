@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<!--
+	Phase Shift by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Phase Shift by TEMPLATED</title>
+		{% load staticfiles %}
+		<script src="{% static '/js/test.js' %}"></script>
+		<link rel="stylesheet" href="{% static '/css/test.css' %}" />
+		
+		<!-- <noscript> -->
+			
+		<!-- </noscript> -->
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="{% static '/js/jquery.min.js' %}"></script>
+		<script src="{% static '/js/jquery.dropotron.min.js' %}"></script>
+		<script src="{% static '/js/skel.min.js' %}"></script>
+		<script src="{% static '/js/skel-layers.min.js' %}"></script>
+		<script src="{% static '/js/init.js' %}"></script>
+			<link rel="stylesheet" href="{% static '/css/skel.css' %}" />
+			<link rel="stylesheet" href="{% static '/css/style.css' %}" />
+			<link rel="stylesheet" href="{% static '/css/style-wide.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<script type='text/javascript'>
+			$(window).load(function (){
+			var url = location.href;
+			if(url.indexOf('?')!=-1){
+			var ary = url.split('?')[1];
+			var message = ary.split('=')[1];
+			if(ary.split('=')[0] == 'message'){
+				alert(message);
+			}
+			}});
+			</script>
+			<script>
+			function sendData(){
+			var searchtext = document.getElementById('search').value;
+			location.href='/search/?search='+searchtext;
+			}
+			</script>
+
+	</head>
+
+	<body>
+
+		<!-- Wrapper -->
+					<div id="header" class="skel-panels-fixed" >
+						<div id="logo">
+							<h1><a href="/index">甜點的心</a></h1>
+							<span class="tag">by 16組</span>	
+						</div>
+
+							<input id="search" type="search" name="search" placeholder="搜尋" >
+							<button class="button fa fa-search" type="search" name="search" onclick="sendData()"></button>
+						
+						<nav id="nav">
+
+							{% if request.user.is_authenticated %}
+							<ul>
+								
+
+								<li><h3>{{request.user}}，歡迎</h3></li>
+								<li class="active"><a href="/memberCenter">會員中心</a></li>
+								<li><a href="/accounts/logout">登出</a></li>
+								<li><a href="{% url 'article:articleCreate' %}">投稿</a></li>
+							</ul>
+							{% else %}
+							<ul>
+								<li class="active"><a href="/memberCenter">會員中心</a></li>
+								<li><a href="/accounts/login">登入</a></li>
+								<li><a href="/accounts/regist">註冊</a></li>
+								<li><a href="{% url 'article:articleCreate' %}">投稿</a></li>
+							</ul>
+							{% endif %}
+							</div>
+						</nav>
+					</div>
+				<!-- Header -->
+<div class="wrapper style1">
+
+				<!-- Page -->
+					<div id="page" class="container" >
+						<div class="row">
+		
+							<!-- Sidebar -->
+							<div id="sidebar" class="4u">
+								<section>
+									<header class="major">
+										<h2>Etiam malesuada</h2>
+									</header>
+									<div class="row half">
+										<section class="6u">
+											<ul class="default">
+												<li><a href="#">Donec facilisis tempor</a></li>
+												<li><a href="#">Nulla convallis cursus</a></li>
+												<li><a href="#">Integer congue euis</a></li>
+												<li><a href="#">Venenatis vulputate</a></li>
+												<li><a href="#">Morbi ligula volutpat</a></li>
+											</ul>
+										</section>
+										<section class="6u">
+											<ul class="default small">
+												<li><a href="#">Donec facilisis tempor</a></li>
+												<li><a href="#">Nulla convallis cursus</a></li>
+												<li><a href="#">Integer congue euis</a></li>
+												<li><a href="#">Venenatis vulputate</a></li>
+												<li><a href="#">Morbi ligula volutpat</a></li>
+											</ul>
+										</section>
+									</div>
+								</section>
+								<section>
+									<header class="major">
+										<h2>Mauris vulputate</h2>
+									</header>
+									<ul class="default">
+										<li><a href="#">Pellentesque lectus gravida blandit</a></li>
+										<li><a href="#">Lorem ipsum consectetuer adipiscing</a></li>
+										<li><a href="#">Phasellus nibh pellentesque congue</a></li>
+										<li><a href="#">Cras vitae metus aliquam pharetra</a></li>
+										<li><a href="#">Maecenas vitae orci feugiat eleifend</a></li>
+										<li><a href="#">Phasellus nibh pellentesque congue</a></li>
+										<li><a href="#">Cras vitae metus aliquam pharetra</a></li>
+									</ul>
+								</section>
+							</div>
+							
+							<!-- Content -->
+							<div id="content" class="8u skel-cell-important">
+								<section>
+									<header class="major">
+										<h2>{{article.title}}</h2>
+										<span class="byline">{{article.content|linebreaks}}</span>
+									</header>
+									<iframe width="764" height="430" src="https://youtube.com/embed/{{article.videoID}}"></iframe>
+									<hr>
+									<h2>食材:</h2>
+									<pre>
+										{{article.material|linebreaks}}
+									</pre>
+									<h2>步驟:</h2>
+									<pre>
+									{{article.step1|linebreaks}}
+									</pre>
+								</section>
+							</div>
+		
+						</div>
+					</div>
+				<!-- /Page -->
+
+				<!-- Main -->
+					<div id="main">
+						<div class="container">
+							<div class="row"> 
+								
+								<!-- Content -->
+								<div class="6u">
+									<section>
+										<ul class="style">
+											<li class="fa fa-wrench">
+												<h3>Integer ultrices</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+											<li class="fa fa-leaf">
+												<h3>Aliquam luctus</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+										</ul>
+									</section>
+								</div>
+								<div class="6u">
+									<section>
+										<ul class="style">
+											<li class="fa fa-cogs">
+												<h3>Integer ultrices</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+											<li class="fa fa-road">
+												<h3>Aliquam luctus</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+										</ul>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				<!-- /Main --> 
+			</div>
+	</div>
+
+	<!-- Footer -->
+		<div id="footer" class="wrapper style2">
+			<div class="container">
+				<!-- <section> -->
+					<header class="major">
+						<h2 align="center">留言板</h2>
+					</header>
+
+							{% if request.user.is_authenticated %}
+							<form method="post" action="{% url 'article:commentCreate' article.title %}">
+								{% csrf_token %}
+								<input type= 'text' name='comment' placeholder="留言...">
+								<input type='submit' value='送出'>
+							</form>
+							{% endif %}
+
+								
+								<table style=" border: 1px solid black; padding:  5em">
+								
+
+								{% for comment in comments %}
+								<tr style=" border: 1px solid black;">
+								<td>
+								<p><strong>{{comment.user}}</strong>：{{comment.content}}</p>
+								</td>
+
+								<td>
+								{% if comment.user == request.user %}
+								
+								<form class= 'inlineblock' method="post" action="{% url 'article:commentDelete' comment.id %}">
+									{% csrf_token %}
+									<input class="btn deleteConfirm" type="submit" value="刪除留言">
+								</form>
+								{% endif %}
+								</td>
+
+								</tr>
+								
+								{% endfor %}
+								</table>
+
+							
+
+							{% if author == user %}
+							<form method="post" action="{% url 'article:articleDelete' article.title %}">
+								{% csrf_token %}
+								<input type="submit" value="刪除文章" style="position: fixed; left:0;">
+							</form>
+							{% endif %}
+								
+					
+
+
+
+
+				<!-- </section> -->
+			</div>
+		</div>
+	<!-- /Footer -->
+
+
+	</body>
+</html>

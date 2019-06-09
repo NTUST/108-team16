@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Phase Shift by TEMPLATED</title>
+		{% load staticfiles %}
+		<script src="{% static '/js/test.js' %}"></script>
+		<link rel="stylesheet" href="{% static '/css/test.css' %}" />
+		
+		<!-- <noscript> -->
+			
+		<!-- </noscript> -->
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="{% static '/js/jquery.min.js' %}"></script>
+		<script src="{% static '/js/jquery.dropotron.min.js' %}"></script>
+		<script src="{% static '/js/skel.min.js' %}"></script>
+		<script src="{% static '/js/skel-layers.min.js' %}"></script>
+		<script src="{% static '/js/init.js' %}"></script>
+			<link rel="stylesheet" href="{% static '/css/skel.css' %}" />
+			<link rel="stylesheet" href="{% static '/css/style.css' %}" />
+			<link rel="stylesheet" href="{% static '/css/style-wide.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<script type='text/javascript'>
+			$(window).load(function (){
+			var url = location.href;
+			if(url.indexOf('?')!=-1){
+			var ary = url.split('?')[1];
+			var message = ary.split('=')[1];
+			if(ary.split('=')[0] == 'message'){
+				alert(message);
+			}
+			}});
+			</script>
+			<script>
+			function sendData(){
+			var searchtext = document.getElementById('search').value;
+			location.href='/search/?search='+searchtext;
+			}
+			</script>
+
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			
+
+				<!-- Header -->
+					<div id="header" class="skel-panels-fixed" >
+						<div id="logo">
+							<h1><a href="/index">甜點的心</a></h1>
+							<span class="tag">by 16組</span>	
+						</div>
+
+							<input id="search" type="search" name="search" placeholder="搜尋" >
+							<button class="button fa fa-search" type="search" name="search" onclick="sendData()"></button>
+						
+						<nav id="nav">
+
+							{% if request.user.is_authenticated %}
+							<ul>
+								
+
+								<li><h3>{{request.user}}，歡迎</h3></li>
+								<li class="active"><a href="/memberCenter">會員中心</a></li>
+								<li><a href="/accounts/logout">登出</a></li>
+								<li><a href="{% url 'article:articleCreate' %}">投稿</a></li>
+							</ul>
+							{% else %}
+							<ul>
+								<li class="active"><a href="/memberCenter">會員中心</a></li>
+								<li><a href="/accounts/login">登入</a></li>
+								<li><a href="/accounts/regist">註冊</a></li>
+								<li><a href="{% url 'article:articleCreate' %}">投稿</a></li>
+							</ul>
+							{% endif %}
+							</div>
+						</nav>
+					</div>
+				<!-- Page -->
+				<div class="wrapper style1">
+					<div id="page" class="container">
+						<div class="row">
+		
+							<!-- Sidebar -->
+							<div id="sidebar" class="4u">
+								<section>
+									<header class="major">
+										<h2> <br> </h2>
+									</header>
+									<div class="row half">
+										<section class="6u">
+											<ul class="default">
+												<li><a href="/memberCenter">基本資料</a></li>
+												<li><a href="{% url 'article:myLike' %}">👏拍拍手</a></li>
+												<li><a href="/articleCreate">我要投稿</a></li>
+												<li><a href="{% url 'article:myArticle' %}">我的文章</a></li>
+											</ul>
+										</section>
+										<!-- <section class="6u">
+											<ul class="default small">
+												<li><a href="#">Donec facilisis tempor</a></li>
+												<li><a href="#">Nulla convallis cursus</a></li>
+												<li><a href="#">Integer congue euis</a></li>
+												<li><a href="#">Venenatis vulputate</a></li>
+												<li><a href="#">Morbi ligula volutpat</a></li>
+											</ul>
+										</section> -->
+									</div>
+								</section>
+								<!-- <section>
+									<header class="major">
+										<h2>Mauris vulputate</h2>
+									</header>
+									<ul class="default">
+										<li><a href="#">Pellentesque lectus gravida blandit</a></li>
+										<li><a href="#">Lorem ipsum consectetuer adipiscing</a></li>
+										<li><a href="#">Phasellus nibh pellentesque congue</a></li>
+										<li><a href="#">Cras vitae metus aliquam pharetra</a></li>
+										<li><a href="#">Maecenas vitae orci feugiat eleifend</a></li>
+										<li><a href="#">Phasellus nibh pellentesque congue</a></li>
+										<li><a href="#">Cras vitae metus aliquam pharetra</a></li>
+									</ul>
+								</section> -->
+							</div>
+							
+							<!-- Content -->
+							<div id="content" class="8u skel-cell-important">
+								<section>
+									<header class="major">
+										<h2>👏拍拍手</h2>
+									</header>
+							
+							<style>
+							input[type=text],input[type=password]{
+  							width: 100%;
+  							padding: 12px 20px;
+  							margin: 8px 0;
+  							display: inline-block;
+  							border: 1px solid #ccc;
+  							border-radius: 4px;
+  							box-sizing: border-box;
+							}
+
+							input[type=submit] {
+  							width: 100%;
+ 							background-color: lightsalmon;
+  							color: white;
+ 							padding: 14px 20px;
+  							margin: 8px 0;
+  							border: none;
+  							border-radius: 4px;
+  							cursor: pointer;
+							}
+							a{
+								color: green;
+							}
+							ul{
+								list-style-type: none;
+							}
+							</style>
+
+
+									<div>
+    										<table>
+    											<tr>
+    												<th>作者</th>
+    												<th>文章標題</th>
+    												<th>發布日期</th>
+    												<th></th>
+    											</tr>
+    											{% for article in articles %}
+    											<tr>
+    												<th>{{article.author}}</th>
+    												<th>{{article.title}}</th>
+    												<th>{{article.pubDateTime|date:'m月d日 H:i'}}</th>
+    												<th><a href="{% url 'article:articleRead' article.title %}">去看看！</a></th>
+    											</tr>
+    											{% endfor %}
+    										</table>
+									</div>
+								</section>
+							</div>
+		
+						</div>
+					</div>
+				<!-- /Page -->
+</div>
+</body>
+</html>

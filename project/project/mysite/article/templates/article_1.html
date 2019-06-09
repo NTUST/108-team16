@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Phase Shift by TEMPLATED</title>
+		{% load staticfiles %}
+		<script src="{% static '/js/test.js' %}"></script>
+		<link rel="stylesheet" href="{% static '/css/test.css' %}" />
+		
+		<!-- <noscript> -->
+			
+		<!-- </noscript> -->
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="{% static '/js/jquery.min.js' %}"></script>
+		<script src="{% static '/js/jquery.dropotron.min.js' %}"></script>
+		<script src="{% static '/js/skel.min.js' %}"></script>
+		<script src="{% static '/js/skel-layers.min.js' %}"></script>
+		<script src="{% static '/js/init.js' %}"></script>
+			<link rel="stylesheet" href="{% static '/css/skel.css' %}" />
+			<link rel="stylesheet" href="{% static '/css/style.css' %}" />
+			<link rel="stylesheet" href="{% static '/css/style-wide.css' %}" />
+</head>
+<body>
+
+					<div id="header" class="skel-panels-fixed" >
+						<div id="logo">
+							<h1><a href="/index">甜點的心</a></h1>
+							<span class="tag">by 16組</span>	
+						</div>
+						<input id="search" type="search" name="search" placeholder="搜尋" >
+						<button class="button fa fa-search" type="search" name="search" ></button>
+						<nav id="nav">
+							<ul>
+								<li class="active"><a href="/memberCenter">會員中心</a></li>
+
+								<li><a href="/login">登入</a></li>
+
+								<li><a href="/login">登出</a></li>
+								<li><a href="/article">投稿</a></li>
+							</ul>
+						</nav>
+					</div>
+	<div class="wrapper style1">
+		<div id="page" class="container">
+			<form id="form1" action='' method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{articleForm.as_p}}
+			<input type='submit' value='完成！'> 
+			</form>
+		</div>
+	</div>
+	<div id="main">
+						<div class="container">
+							<div class="row">
+								
+								<!-- Content -->
+								<div class="6u">
+									<section>
+										<ul class="style">
+											<li class="fas fa-cookie" style :before="color:black;">
+												<h3>石喻仁</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+											<li class="fas fa-ice-cream">
+												<h3>邱捷儀</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+										</ul>
+									</section>
+								</div>
+								<div class="6u">
+									<section>
+										<ul class="style">
+											<li class="fas fa-egg">
+												<h3>吳芷昀</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+											<li class="fas fa-cheese">
+												<h3>陳韻如</h3>
+												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+										</ul>
+									</section>
+								</div>  
+							</div>
+						</div>
+					</div>
+	
+		<div id="copyright">
+			<div class="container">
+				<div class="copyright">
+					<p>Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
+					<ul class="icons">
+						<li><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
+						<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+						<li><a href="#" class="fa fa-google-plus"><span>Google+</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
