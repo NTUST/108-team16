@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Phase Shift by TEMPLATED</title>
+		{% load staticfiles %}
+		<script src="{% static '/js/test.js' %}"></script>
+		<link rel="stylesheet" href="{% static '/css/test.css' %}" />
+		
+		<!-- <noscript> -->
+			
+		<!-- </noscript> -->
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="{% static '/js/jquery.min.js' %}"></script>
+		<script src="{% static '/js/jquery.dropotron.min.js' %}"></script>
+		<script src="{% static '/js/skel.min.js' %}"></script>
+		<script src="{% static '/js/skel-layers.min.js' %}"></script>
+		<script src="{% static '/js/init.js' %}"></script>
+			<link rel="stylesheet" href="{% static '/css/skel.css' %}" />
+			<link rel="stylesheet" href="{% static '/css/style.css' %}" />
+			<link rel="stylesheet" href="{% static '/css/style-wide.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<script type='text/javascript'>
+			$(window).load(function (){
+			var url = location.href;
+			if(url.indexOf('?')!=-1){
+			var ary = url.split('?')[1];
+			var message = ary.split('=')[1];
+			if(ary.split('=')[0] == 'message'){
+				alert(message);
+			}
+			}});
+			</script>
+			<script>
+			function sendData(){
+			var searchtext = document.getElementById('search').value;
+			location.href='/search/?search='+searchtext;
+			}
+			</script>
+
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			
+
+				<!-- Header -->
+					<div id="header" class="skel-panels-fixed" >
+						<div id="logo">
+							<h1><a href="/index">甜點的心</a></h1>
+							<span class="tag">by 16組</span>	
+						</div>
+
+							<input id="search" type="search" name="search" placeholder="搜尋" >
+							<button class="button fa fa-search" type="search" name="search" onclick="sendData()"></button>
+						
+						<nav id="nav">
+
+							{% if request.user.is_authenticated %}
+							<ul>
+								
+
+								<li><h3>{{request.user}}，歡迎</h3></li>
+								<li class="active"><a href="/memberCenter">會員中心</a></li>
+								<li><a href="/accounts/logout">登出</a></li>
+								<li><a href="{% url 'article:articleCreate' %}">投稿</a></li>
+							</ul>
+							{% else %}
+							<ul>
+								<li class="active"><a href="/memberCenter">會員中心</a></li>
+								<li><a href="/accounts/login">登入</a></li>
+								<li><a href="/accounts/regist">註冊</a></li>
+								<li><a href="{% url 'article:articleCreate' %}">投稿</a></li>
+							</ul>
+							{% endif %}
+							</div>
+						</nav>
+					</div>
+					<!-- Wrapper -->
+			<div class="wrapper style1">
+
+				<!-- Page -->
+					<div id="page" class="container">
+						<section>
+							<div class="row">
+								<div class="6u">
+									<header class="major">
+										<h2>{{article.title}}<span style="right: 100px;position: absolute;">{{article.pubDateTime|date:'m月d日 H:i'}}</span></h2>
+										<span class="byline">{{article.content|linebreaks}}</span>
+									</header>
+									
+									
+									<iframe width="764" height="430" src="https://youtube.com/embed/{{article.videoID}}"></iframe>
+									<hr>
+									<h2>食材:</h2>
+									<p>
+										{{article.material|linebreaks}}
+									</p>
+								</div>
+								<div class="6u">
+									<img src="images/01.jpg" alt="" width="400" height="300">
+								</div>
+							</div>
+							<h2>步驟:</h2>
+							<p>
+								{{article.step1|linebreaks}}
+							</p>
+						</section>
+					</div>
+				</div>
+
+				<!-- Footer -->
+		<div id="footer" class="wrapper style2">
+			<div class="container">
+				<!-- <section> -->
+					<header class="major">
+						<h2 align="center">留言板</h2>
+					</header>
+
+						<table style=" border: 1px solid black; padding:5em;background-color: white;color: gray;">
+
+						{% for comment in comments %}
+						<!-- <div style="background-color: white; color: gray; margin:1em 5em;" > -->
+							<tr style="border-bottom: 1px dashed black;">
+							<td >	
+							<i class="fas fa-user" style="font-size: 3em;" ></i>
+							</td>
+							<td>
+							<p align="left">{{comment.user}}：{{comment.content}}</p>
+							</td>
+							<td>
+							{{comment.pubDateTime|date:'m月d日 H:i'}}
+							</td>
+							 
+							<td>
+								{% if comment.user == request.user %}
+								<form class= 'inlineblock' method="post" action="{% url 'article:commentDelete' comment.id %}">
+									{% csrf_token %}
+									<input class="btn deleteConfirm" type="submit" value="刪除留言">
+								</form>
+								{% endif %}
+							</td>
+						<!-- </div> -->
+					</tr>
+
+					{% endfor %}
+					</table>
+
+					
+					{% if request.user.is_authenticated %}
+					<h2 align="center">我要留言</h2>
+					<form method="post" action="{% url 'article:commentCreate' article.title %}">
+						{% csrf_token %}
+						<input type= 'text' name='comment' placeholder="留言...">
+						<input type='submit' value='送出'>
+					</form>
+					
+					
+
+					{% if author == user %}
+					<form method="post" action="{% url 'article:articleDelete' article.title %}">
+						{% csrf_token %}
+						<input type="submit" value="刪除文章" style="position: fixed; left:0;">
+					</form>
+					{% endif %}
+					<form method='post' action="{% url 'article:articleLike' article.title %}">
+						{% csrf_token %}
+						{% if condition %}
+						<input type="submit" value="收回讚">
+						{% else %}
+						<input class="button" type="submit" value="讚">
+						{% endif %}
+					</form>
+					{% endif %}
+				<!-- /Page -->
+					
+
+
+
+
+				<!-- </section> -->
+			</div>
+		</div>
+	<!-- /Footer -->
+
+
+					
+
+
+
+</body>
+</html>
