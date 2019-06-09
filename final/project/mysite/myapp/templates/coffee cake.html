@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Phase Shift by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Phase Shift by TEMPLATED</title>
+		{% load staticfiles %}
+		<script src="{% static '/js/test.js' %}"></script>
+		<link rel="stylesheet" href="{% static '/css/test.css' %}" />
+		
+		<!-- <noscript> -->
+			
+		<!-- </noscript> -->
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="{% static '/js/jquery.min.js' %}"></script>
+		<script src="{% static '/js/jquery.dropotron.min.js' %}"></script>
+		<script src="{% static '/js/skel.min.js' %}"></script>
+		<script src="{% static '/js/skel-layers.min.js' %}"></script>
+		<script src="{% static '/js/init.js' %}"></script>
+			<link rel="stylesheet" href="{% static '/css/skel.css' %}" />
+			<link rel="stylesheet" href="{% static '/css/style.css' %}" />
+			<link rel="stylesheet" href="{% static '/css/style-wide.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+	</head>
+	<body>
+
+				<!-- Header -->
+					<div id="header" class="skel-panels-fixed" >
+						<div id="logo">
+							<h1><a href="/index">甜點的心</a></h1>
+							<span class="tag">by 16組</span>	
+						</div>
+						<input id="search" type="search" name="search" placeholder="搜尋" >
+						<button class="button fa fa-search" type="search" name="search" ></button>
+						<nav id="nav">
+
+							{% if request.user.is_authenticated %}
+							<ul>
+								
+
+								<li><h3>{{request.user}}，歡迎</h3></li>
+								<li class="active"><a href="/memberCenter">會員中心</a></li>
+								<li><a href="/accounts/logout">登出</a></li>
+								<li><a href="/article">投稿</a></li>
+							</ul>
+							{% else %}
+							<ul>
+								<li class="active"><a href="/memberCenter">會員中心</a></li>
+								<li><a href="/accounts/login">登入</a></li>
+								<li><a href="/accounts/regist">註冊</a></li>
+								<li><a href="/article">投稿</a></li>
+							</ul>
+							{% endif %}
+
+						</nav>
+					</div>
+
+
+					
+		<!-- Wrapper -->
+			<div class="wrapper style1">
+
+				<!-- Page -->
+					<div id="page" class="container">
+						<section>
+							<div class="row">
+								<div class="6u">
+									<header class="major">
+										<h2>Coffee cake</h2>
+							<!--	<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span> -->
+									</header>
+									<h2>食材:</h2>
+									<p><h1>蛋黃</h1>
+									<dir>
+										<li>全蛋:107g</li> 
+										<li>蛋黃:107g</li>
+										<li>鹽:少許</li>
+										<li>細砂糖:54g</li>
+										<li>低粉:92g</li>
+									</dir>
+
+									<h1>蛋白</h1>
+									<dir>
+										<li>蛋白:192g</li>
+		          						<li>檸檬:4g</li>
+		                  				<li>細砂糖:107g</li>
+		                  			</dir>
+
+									<h1>咖啡慕斯</h1>
+									<dir>
+										<li>牛奶:326g</li>
+										<li>吉利丁片:11片</li>
+										<li>蛋黃:4顆</li>
+										<li>細砂糖:32g</li>
+										<li>熱開水:28g</li>
+										<li>雀巢即溶咖啡粉:8g</li>
+										<li>卡魯哇咖啡酒:32g</li>
+										<li>蛋白:4顆</li>
+										<li>細砂糖:80g</li>
+										<li>動物性鮮奶油:452g</li>
+									</dir>
+									</p>
+								</div>
+								<div class="6u">
+									<img src="{%static 'images/6.jpg'%}" alt="" width="400" height="300">
+								</div>
+							</div>
+							<h2>步驟:</h2>
+							<p><ol class="default">
+								<h1>咖啡慕斯</h1>
+								<li>牛奶煮沸加入泡軟的吉利丁</li>
+								<li>四顆蛋黃加糖拌勻</li> 
+								<li>加在一起加入咖啡酒咖啡水</li> 
+								<li>拌勻後過篩 蛋白打起泡後在加入糖後打至（濕性發泡）在加入3的地方成為4</li>
+								<li>動鮮打發後在加入4的地方拿去冰箱冰</li>
+
+								<h1>蛋白</h1>
+								<li>蛋白檸檬汁打起泡後加入糖打發，幾三條距離曲好重疊一次</li>
+
+								<h1>蛋黃</h1>
+								<li>全蛋蛋黃糖打發加入滴粉過篩拌勻，擠入蛋白的縫隙裡跟蛋白一樣高，表面撒上糖粉烤<br>
+								上下火各170預設20分鐘<br>
+								烤出後冷卻後在夾餡</li>
+
+							</ol>
+							</p>
+						</section>
+					</div>
+				<!-- /Page -->
+
+	</div>
+
+	<!-- Copyright -->
+		<div id="copyright">
+			<div class="container"> <span class="copyright">Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</span>
+				<ul class="icons">
+					<li><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
+					<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+					<li><a href="#" class="fa fa-google-plus"><span>Google+</span></a></li>
+				</ul>
+			</div>
+		</div>
+
+	</body>
+</html>
