@@ -10,7 +10,7 @@
 /* Basic */
 
 	body {
-		background: #fff;
+  background: url(http://www.sj520.cn/sc/ima/20160911204656_56834.jpg);
 	}
 
 	body, span, input, select, textarea {
@@ -724,6 +724,7 @@
 
   .part {
   color: white;
+  font-family: 'Raleway', sans-serif;
 }
 .part__cover {
   position: absolute;
@@ -754,12 +755,11 @@
 
 
 .part__topic {
-  font-family: Marcellus SC;
   font-size: 4.2vw;
   margin-bottom: 6vw;
+  font-weight: 700;
 }
 .part__description {
-  font-family: Montserrat Alternates;
   font-size: 1.2vw;
   font-weight: 200;
   letter-spacing: 0.2vw;
@@ -776,10 +776,8 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  background: url(http://www.sj520.cn/sc/ima/20160911204656_56834.jpg);
 }
 .section_food .title {
-  font-family: Montserrat Alternates;
   width: 65%;
   display: inline-block;
   position: position;
